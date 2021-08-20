@@ -1,6 +1,28 @@
 # Build Microservices using Dapr on Azure
 ## Introduction to the Sample Solution
 ## Architecture Design
+## Instructions
+### Run Eshop
+### Run Catalogue
+```
+dapr run --app-id catalogue --app-port 3000 --dapr-http-port 3500 node index.js
+```
+### Run Order
+
+For further reference, please consider the following sections:
+
+* [Official Apache Maven documentation](https://maven.apache.org/guides/index.html)
+* [Spring Boot Maven Plugin Reference Guide](https://docs.spring.io/spring-boot/docs/2.5.3/maven-plugin/reference/html/)
+* [Create an OCI image](https://docs.spring.io/spring-boot/docs/2.5.3/maven-plugin/reference/html/#build-image)
+
+```
+curl -X POST localhost:8080/product/add -H 'Content-type:application/json' -d '{"id": 100, "name": "gardener"}'
+curl -X POST localhost:8080/product/add -H 'Content-type:application/json' -d '{"id": 101, "name": "mom1"}'
+curl -X GET localhost:8080/product/listall
+```
+
 ## References
 * [Dapr](https://dapr.io/)
 * [eShop on Dapr](https://github.com/dotnet-architecture/eShopOnDapr)
+* [Spring WebClient vs. RestTemplate](https://www.baeldung.com/spring-webclient-resttemplate)
+* [5 ways to make HTTP requests in Java](https://www.twilio.com/blog/5-ways-to-make-http-requests-in-java)
